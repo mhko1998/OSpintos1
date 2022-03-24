@@ -33,7 +33,7 @@ static struct list all_list;
 
 
 static struct list sleep_list;
-static int64_t tick_for_timer;
+static int64_t tick_for_timer = INT64_MAX;
 
 
 /*###################### HW 1 ############################*/

@@ -125,9 +125,6 @@ int update_tick_for_timer (int64_t ticks) {
   return tick_for_timer;
 }
 
-// int64_t return_tick_for_timer (void) {
-//   return tick_for_timer;
-// }
 
 /*###################### HW 1 ############################*/
 

@@ -123,7 +123,6 @@ tid_t thread_create (const char *name, int priority, thread_func *, void *);
 
 /*########################## HW 1 ##############################*/
 
-// int return_tick_for_timer (void);
 int update_tick_for_timer (int64_t ticks);
 
 /*########################## HW 1 ##############################*/

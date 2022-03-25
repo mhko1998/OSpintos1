@@ -117,16 +117,17 @@ thread_init (void)
   initial_thread->tid = allocate_tid ();
 }
 
-void update_tick_for_timer (int64_t ticks) {
+int update_tick_for_timer (int64_t ticks) {
 
   if (tick_for_timer >= ticks) {
     tick_for_timer = ticks;
   }
-}
-
-int64_t return_tick_for_timer (void) {
   return tick_for_timer;
 }
+
+// int64_t return_tick_for_timer (void) {
+//   return tick_for_timer;
+// }
 
 /*###################### HW 1 ############################*/
 

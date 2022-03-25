@@ -185,7 +185,7 @@ timer_interrupt (struct intr_frame *args UNUSED)
   ticks++;
   thread_tick ();
   
-  if (return_tick_for_timer() <= ticks) {
+  if (update_tick_for_timer(INT64_MAX) <= ticks) {
     thread_wake (ticks);
   }
 }

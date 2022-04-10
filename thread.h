@@ -103,6 +103,13 @@ struct thread
 
     /* Owned by thread.c. */
     unsigned magic;                     /* Detects stack overflow. */
+    
+    /* HW2 */
+    int eigen_priority;
+    struct lock *lock_type;
+    struct list donations;
+    struct list_elem donation_elem;
+    /* HW2 */
   };
 
 
@@ -113,7 +120,8 @@ extern bool thread_mlfqs;
 
 void thread_init (void);
 void thread_start (void);
-
+bool check_thread_prior(const struct list_elem *, const struct list_elem *, void *);
+void yield_to_maxprior(void);
 void thread_tick (void);
 void thread_print_stats (void);
 
@@ -123,9 +131,16 @@ tid_t thread_create (const char *name, int priority, thread_func *, void *);
 
 /*########################## HW 1 ##############################*/
 
+// int return_tick_for_timer (void);
 int update_tick_for_timer (int64_t ticks);
 
 /*########################## HW 1 ##############################*/
+
+bool check_donate_priority(const struct list_elem *, const struct list_elem *, void *);
+void nested_donation(void);
+void rm_targetlock(struct lock *lock);
+void redonate_prior(void);
+
 
 void thread_block (void);
 void thread_unblock (struct thread *);
